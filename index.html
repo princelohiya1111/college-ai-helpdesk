@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="AI College Helpdesk — a smart frontend-only student support dashboard.">
+
+  <title>AI College Helpdesk</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+      <div class="brand-mark">AI</div>
+
+      <div>
+        <strong>AI College</strong>
+        <span>HELPDESK</span>
+      </div>
+    </div>
+
+    <nav class="nav">
+
+      <button class="nav-item active" data-page="dashboard">
+        <span>⌂</span>
+        Dashboard
+      </button>
+
+      <button class="nav-item" data-page="assistant">
+        <span>✦</span>
+        AI Assistant
+      </button>
+
+      <button class="nav-item" data-page="notices">
+        <span>◉</span>
+        Notices
+        <b class="badge">4</b>
+      </button>
+
+      <button class="nav-item" data-page="documents">
+        <span>▤</span>
+        Documents
+      </button>
+
+      <button class="nav-item" data-page="history">
+        <span>↶</span>
+        Chat History
+      </button>
+
+      <button class="nav-item" data-page="settings">
+        <span>⚙</span>
+        Settings
+      </button>
+
+    </nav>
+
+    <!-- Sidebar Help -->
+
+    <div class="sidebar-help">
+
+      <div class="mini-orb">✦</div>
+
+      <h3>Need quick help?</h3>
+
+      <p>
+        Ask about exams, fees, library, attendance and more.
+      </p>
+
+      <button class="light-btn" data-page="assistant">
+        Ask a question
+        <span>→</span>
+      </button>
+
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="online-dot"></div>
+      Demo mode · Frontend only
+    </div>
+
+  </aside>
+
+
+  <!-- Mobile overlay -->
+
+  <div class="mobile-overlay" id="overlay"></div>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="main">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+      <button
+        class="icon-btn menu-btn"
+        id="menuBtn"
+        aria-label="Open menu">
+        ☰
+      </button>
+
+      <div>
+
+        <div class="topbar-kicker">
+          STUDENT PORTAL
+        </div>
+
+        <h1 id="pageTitle">
+          Dashboard
+        </h1>
+
+      </div>
+
+      <div class="top-actions">
+
+        <button
+          class="icon-btn notification-btn"
+          id="notificationBtn">
+          ♧
+          <i></i>
+        </button>
+
+        <div class="avatar" id="topAvatar">
+          ST
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <div class="content">
+
+      <!-- ================= DASHBOARD ================= -->
+
+      <section class="page active" id="dashboard">
+
+        <!-- HERO -->
+
+        <div class="hero">
+
+          <div class="hero-copy">
+
+            <span class="eyebrow">
+              <span></span>
+              DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING
+            </span>
+
+            <h2>
+              Everything you need,
+              <br>
+              <em>one smart helpdesk.</em>
+            </h2>
+
+            <p>
+              Get instant answers to your college questions,
+              find important documents and stay updated with
+              campus notices.
+            </p>
+
+
+            <form class="hero-search" id="heroForm">
+
+              <span>⌕</span>
+
+              <input
+                id="heroInput"
+                type="text"
+                placeholder="Ask anything about your college..."
+                autocomplete="off">
+
+              <button type="submit">
+                Ask AI
+                <span>→</span>
+              </button>
+
+            </form>
+
+
+            <div class="hero-tags">
+
+              <span>Try asking:</span>
+
+              <button
+                type="button"
+                data-question="When do semester exams start?">
+                Exam dates
+              </button>
+
+              <button
+                type="button"
+                data-question="What are the library timings?">
+                Library timings
+              </button>
+
+              <button
+                type="button"
+                data-question="How can I check my attendance?">
+                Attendance
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- HERO IMAGE -->
+
+          <div class="hero-visual">
+
+            <div class="image-card">
+
+              <img
+                src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1000&q=85"
+                alt="University campus building">
+
+              <div class="image-overlay"></div>
+
+
+              <div class="floating-card float-one">
+
+                <span class="float-icon">
+                  ✦
+                </span>
+
+                <div>
+                  <b>AI Assistant</b>
+                  <small>Ready to help</small>
+                </div>
+
+                <span class="green-check">
+                  ✓
+                </span>
+
+              </div>
+
+
+              <div class="floating-card float-two">
+
+                <b>24/7</b>
+                <small>Quick support</small>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats-grid">
+
+          <article class="stat-card">
+
+            <div class="stat-icon blue">
+              ⌁
+            </div>
+
+            <div>
+              <strong id="statQueries">
+                128
+              </strong>
+
+              <span>
+                Total Queries
+              </span>
+            </div>
+
+            <small>
+              +12% this month
+            </small>
+
+          </article>
+
+
+          <article class="stat-card">
+
+            <div class="stat-icon amber">
+              ◉
+            </div>
+
+            <div>
+              <strong>08</strong>
+
+              <span>
+                Active Notices
+              </span>
+            </div>
+
+            <small>
+              3 new today
+            </small>
+
+          </article>
+
+
+          <article class="stat-card">
+
+            <div class="stat-icon purple">
+              ▤
+            </div>
+
+            <div>
+              <strong>24</strong>
+
+              <span>
+                Documents
+              </span>
+            </div>
+
+            <small>
+              Updated recently
+            </small>
+
+          </article>
+
+
+          <article class="stat-card">
+
+            <div class="stat-icon green">
+              ✓
+            </div>
+
+            <div>
+              <strong id="statAnswered">
+                124
+              </strong>
+
+              <span>
+                Questions Answered
+              </span>
+            </div>
+
+            <small>
+              96.8% success rate
+            </small>
+
+          </article>
+
+        </div>
+
+
+        <!-- QUICK HELP -->
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-label">
+              SHORTCUTS
+            </span>
+
+            <h2>
+              How can we help?
+            </h2>
+
+          </div>
+
+          <button
+            class="text-btn"
+            data-page="assistant">
+            View all →
+          </button>
+
+        </div>
+
+
+        <div
+          class="quick-grid"
+          id="quickGrid">
+        </div>
+
+
+        <!-- BOTTOM -->
+
+        <div class="bottom-grid">
+
+          <div class="panel notice-preview">
+
+            <div class="panel-head">
+
+              <div>
+
+                <span class="section-label">
+                  LATEST
+                </span>
+
+                <h3>
+                  College Notices
+                </h3>
+
+              </div>
+
+              <button
+                class="text-btn"
+                data-page="notices">
+                View all →
+              </button>
+
+            </div>
+
+            <div id="noticePreview"></div>
+
+          </div>
+
+
+          <div class="panel spotlight">
+
+            <div class="spotlight-art">
+              ✦
+            </div>
+
+            <div>
+
+              <span class="section-label">
+                SMART SUPPORT
+              </span>
+
+              <h3>
+                Your AI study companion
+              </h3>
+
+              <p>
+                Ask questions in natural language and get
+                helpful answers from the college knowledge base.
+              </p>
+
+              <button
+                class="primary-btn"
+                data-page="assistant">
+                Start chatting →
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= AI ASSISTANT ================= -->
+
+      <section class="page" id="assistant">
+
+        <div class="assistant-layout">
+
+          <div class="chat-panel">
+
+            <div class="chat-head">
+
+              <div class="bot-avatar">
+                ✦
+              </div>
+
+              <div>
+
+                <strong>
+                  College Helpdesk AI
+                </strong>
+
+                <span>
+                  <i></i>
+                  Online · Demo mode
+                </span>
+
+              </div>
+
+              <button
+                class="icon-btn"
+                id="clearChatBtn">
+                ↻
+              </button>
+
+            </div>
+
+
+            <div
+              class="chat-messages"
+              id="chatMessages">
+            </div>
+
+
+            <div
+              class="suggestions"
+              id="suggestions">
+            </div>
+
+
+            <form
+              class="chat-form"
+              id="chatForm">
+
+              <input
+                id="questionInput"
+                maxlength="500"
+                placeholder="Type your question..."
+                autocomplete="off">
+
+              <button type="submit">
+                Send ➤
+              </button>
+
+            </form>
+
+
+            <p class="demo-note">
+              Demo frontend — responses are simulated locally.
+              No backend or API is connected.
+            </p>
+
+          </div>
+
+
+          <!-- Assistant Side -->
+
+          <aside class="assistant-side">
+
+            <div class="panel">
+
+              <span class="section-label">
+                POPULAR
+              </span>
+
+              <h3>
+                Ask about
+              </h3>
+
+
+              <button
+                class="topic-btn"
+                data-question="What are the semester exam dates?">
+
+                <span>📅</span>
+                Exam schedule
+                <b>→</b>
+
+              </button>
+
+
+              <button
+                class="topic-btn"
+                data-question="How do I pay my semester fees?">
+
+                <span>₹</span>
+                Fees & payments
+                <b>→</b>
+
+              </button>
+
+
+              <button
+                class="topic-btn"
+                data-question="What are the library timings?">
+
+                <span>▤</span>
+                Library
+                <b>→</b>
+
+              </button>
+
+
+              <button
+                class="topic-btn"
+                data-question="How can I check my attendance?">
+
+                <span>✓</span>
+                Attendance
+                <b>→</b>
+
+              </button>
+
+
+              <button
+                class="topic-btn"
+                data-question="Where can I find academic documents?">
+
+                <span>⌁</span>
+                Documents
+                <b>→</b>
+
+              </button>
+
+            </div>
+
+
+            <div class="tip-card">
+
+              <span>💡</span>
+
+              <div>
+
+                <b>Tip</b>
+
+                <p>
+                  Ask complete questions for more useful
+                  demo answers.
+                </p>
+
+              </div>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= NOTICES ================= -->
+
+      <section class="page" id="notices">
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-label">
+              CAMPUS UPDATES
+            </span>
+
+            <h2>
+              Latest Notices
+            </h2>
+
+            <p>
+              Important announcements and student updates.
+            </p>
+
+          </div>
+
+          <button class="filter-btn">
+            All notices ▾
+          </button>
+
+        </div>
+
+
+        <div
+          class="notice-list"
+          id="noticeList">
+        </div>
+
+      </section>
+
+
+      <!-- ================= DOCUMENTS ================= -->
+
+      <section class="page" id="documents">
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-label">
+              RESOURCES
+            </span>
+
+            <h2>
+              Documents
+            </h2>
+
+            <p>
+              Find important academic forms and guidelines.
+            </p>
+
+          </div>
+
+
+          <div class="search-mini">
+
+            <span>⌕</span>
+
+            <input
+              id="docSearch"
+              placeholder="Search documents...">
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="doc-grid"
+          id="docGrid">
+        </div>
+
+      </section>
+
+
+      <!-- ================= HISTORY ================= -->
+
+      <section class="page" id="history">
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-label">
+              YOUR ACTIVITY
+            </span>
+
+            <h2>
+              Chat History
+            </h2>
+
+            <p>
+              Your questions from this browser session.
+            </p>
+
+          </div>
+
+          <button
+            class="danger-outline"
+            id="clearHistory">
+            Clear history
+          </button>
+
+        </div>
+
+
+        <div
+          class="history-list"
+          id="historyList">
+        </div>
+
+      </section>
+
+
+      <!-- ================= SETTINGS ================= -->
+
+      <section class="page" id="settings">
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="section-label">
+              PREFERENCES
+            </span>
+
+            <h2>
+              Settings
+            </h2>
+
+            <p>
+              Manage your profile and experience.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="settings-grid">
+
+          <!-- PROFILE -->
+
+          <div class="panel settings-panel">
+
+            <span class="section-label">
+              PROFILE
+            </span>
+
+            <h3>
+              Student profile
+            </h3>
+
+
+            <div class="profile-header">
+
+              <div
+                class="avatar large"
+                id="profileAvatar">
+                ST
+              </div>
+
+              <div>
+
+                <strong id="profileNameView">
+                  Satyam Thakur
+                </strong>
+
+                <span>
+                  B.Tech CSE · 2nd Semester
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <form
+              id="profileForm"
+              class="profile-form">
+
+              <label>
+                Full name
+
+                <input
+                  id="profileName"
+                  value="Satyam Thakur">
+              </label>
+
+
+              <div class="form-row">
+
+                <label>
+                  Roll number
+
+                  <input
+                    id="profileRoll"
+                    placeholder="Enter roll number">
+                </label>
+
+
+                <label>
+                  Year
+
+                  <select id="profileYear">
+
+                    <option>
+                      1st Year
+                    </option>
+
+                    <option>
+                      2nd Year
+                    </option>
+
+                    <option>
+                      3rd Year
+                    </option>
+
+                    <option>
+                      4th Year
+                    </option>
+
+                  </select>
+
+                </label>
+
+              </div>
+
+
+              <label>
+                Department
+
+                <input
+                  id="profileDept"
+                  value="B.Tech CSE (AIML)">
+              </label>
+
+
+              <label>
+                Email
+
+                <input
+                  id="profileEmail"
+                  type="email"
+                  placeholder="student@example.com">
+              </label>
+
+
+              <button
+                class="primary-btn"
+                type="submit">
+                Save changes
+              </button>
+
+            </form>
+
+          </div>
+
+
+          <!-- PREFERENCES -->
+
+          <div class="panel settings-panel">
+
+            <span class="section-label">
+              APP
+            </span>
+
+            <h3>
+              Preferences
+            </h3>
+
+
+            <div class="setting">
+
+              <div>
+
+                <b>
+                  Dark mode
+                </b>
+
+                <span>
+                  Use a darker interface.
+                </span>
+
+              </div>
+
+              <label class="switch">
+
+                <input
+                  type="checkbox"
+                  id="darkToggle">
+
+                <i></i>
+
+              </label>
+
+            </div>
+
+
+            <div class="setting">
+
+              <div>
+
+                <b>
+                  Notifications
+                </b>
+
+                <span>
+                  Show alerts for new notices.
+                </span>
+
+              </div>
+
+              <label class="switch">
+
+                <input
+                  type="checkbox"
+                  id="notifyToggle"
+                  checked>
+
+                <i></i>
+
+              </label>
+
+            </div>
+
+
+            <div class="setting">
+
+              <div>
+
+                <b>
+                  Reduce animations
+                </b>
+
+                <span>
+                  Use fewer interface transitions.
+                </span>
+
+              </div>
+
+              <label class="switch">
+
+                <input
+                  type="checkbox"
+                  id="motionToggle">
+
+                <i></i>
+
+              </label>
+
+            </div>
+
+
+            <div class="setting">
+
+              <div>
+
+                <b>
+                  Clear chat history
+                </b>
+
+                <span>
+                  Delete saved questions from this session.
+                </span>
+
+              </div>
+
+              <button
+                class="danger-btn"
+                id="clearSettingsHistory">
+                Clear
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+</div>
+
+
+<!-- ================= MODAL ================= -->
+
+<div
+  class="modal"
+  id="modal">
+
+  <div class="modal-box">
+
+    <button
+      class="modal-close"
+      id="modalClose">
+      ×
+    </button>
+
+    <span
+      class="section-label"
+      id="modalMeta">
+      NOTICE
+    </span>
+
+    <h2 id="modalTitle"></h2>
+
+    <p id="modalBody"></p>
+
+    <button
+      class="primary-btn"
+      id="modalAction">
+      Got it
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+  class="toast"
+  id="toast">
+</div>
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
